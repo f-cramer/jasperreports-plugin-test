@@ -1,0 +1,13 @@
+<jasperReport name="report" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30"
+              rightMargin="30" topMargin="20" bottomMargin="20" uuid="65647229-b9ea-492c-9579-df6c5298a9a2">
+    <import>is.jasper.test.TestDataSource</import>
+    <parameter name="SUBREPORT" class="net.sf.jasperreports.engine.JasperReport"/>
+    <detail>
+        <band height="52">
+            <element kind="subreport" uuid="fe0b73e2-e164-4dd6-a08d-9afb8d964fc2" x="-30" y="30" width="595" height="16">
+                <dataSourceExpression><![CDATA[((TestDataSource) $P{REPORT_DATA_SOURCE}).subreportDataSource()]]></dataSourceExpression>
+                <expression><![CDATA[$P{SUBREPORT}]]></expression>
+            </element>
+        </band>
+    </detail>
+</jasperReport>

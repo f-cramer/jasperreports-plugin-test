@@ -1,0 +1,19 @@
+plugins {
+    id "io.github.f-cramer.jasperreports" version "0.0.1"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("net.sf.jasperreports:jasperreports:6.21.3")
+}
+
+jasperreports {
+    srcDir = file("src/main/reports")
+    outDir = project.layout.buildDirectory.dir("resources/main").get()
+    classpath.from(project.sourceSets.main.getRuntimeClasspath())
+    tmpDir = project.layout.buildDirectory.dir("tmp").get()
+    verbose = true
+}

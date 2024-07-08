@@ -1,0 +1,14 @@
+<jasperReport name="report" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30"
+              rightMargin="30" topMargin="20" bottomMargin="20">
+	<import value="is.jasper.test.TestDataSource"/>
+    <parameter name="SUBREPORT" class="net.sf.jasperreports.engine.JasperReport"/>
+	<detail>
+		<band height="52">
+			<subreport>
+				<reportElement x="-30" y="30" width="595" height="16"/>
+				<dataSourceExpression><![CDATA[((is.jasper.test.TestDataSource) $P{REPORT_DATA_SOURCE}).subreportDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
