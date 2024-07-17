@@ -14,12 +14,11 @@ repositories {
 }
 
 dependencies {
-    implementation("net.sf.jasperreports:jasperreports:7.0.0")
-    implementation("net.sf.jasperreports:jasperreports-jdt:7.0.0")
+	implementation(project(":datasource"))
 }
 
 jasperreports {
-    classpath.from(project.sourceSets.main.runtimeClasspath)
+    classpath.from(configurations.compileClasspath)
 }
 
 sourceSets.main.resources.srcDir(compileAllReports)
